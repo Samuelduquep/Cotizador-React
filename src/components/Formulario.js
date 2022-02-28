@@ -11,6 +11,16 @@ const Campo = styled.div`
 
 `;
 
+const CampoRadio = styled.div`
+    display: flex;
+    justify-content: space-between;
+    @media (min-width: 768px) {
+        display:flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+`;
+
 const Label = styled.label`
     flex: 0 0 100px;
 `;
@@ -35,11 +45,6 @@ const Opciones = styled.option`
     text-align: center;
    
 `;
-
-const InputRadio = styled.input`
-   margin: 1rem 2rem;
-   width: 10%;
-`;  
 
 const Boton = styled.button`
     background-color: #1e3c72;
@@ -189,9 +194,9 @@ const Formulario = ({setResumen,setCargando}) => {
                 <Opciones value="2012">2012</Opciones>
           </Select>
       </Campo>
-      <Campo>
+      <CampoRadio>
           <Label>Plan</Label>
-          <InputRadio
+          <input
             type='radio'
             name='plan'
             value='basico'
@@ -199,14 +204,14 @@ const Formulario = ({setResumen,setCargando}) => {
             onChange={obtenerInfo}
           /> Básico
 
-          <InputRadio
+          <input
             type='radio'
             name='plan'
             value='completo'
             checked={plan==='completo'}
             onChange={obtenerInfo}
           /> Completo
-      </Campo>     
+      </CampoRadio>     
       
       <Boton type='submit'>Cotizar</Boton>
     </form>

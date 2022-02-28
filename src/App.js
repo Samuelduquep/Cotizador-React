@@ -15,6 +15,7 @@ const Contenedor = styled.div`
 `;
 
 const ContenedorFormulario = styled.div`
+  
   background-color: #fff;
   padding: 3rem;
 `;
